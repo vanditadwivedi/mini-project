@@ -1,0 +1,24 @@
+{% extends 'webscrap/basic.html' %}
+{%  block title  %} this is signup page  {%  endblock %}
+
+{% block body %}
+<div class="container">
+    {% if form.errors %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>  there was error with your form ...  </strong> 
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        </button>
+      </div>
+    {% endif %}
+    <h1> Sign Up</h1>
+    <br><br>
+    <form action="{% url 'signup_user' %}" method="post">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+   <br><br>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+</div>
+
+{%  endblock %}
