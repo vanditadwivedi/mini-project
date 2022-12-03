@@ -8,11 +8,11 @@ class Tags(models.Model):
         Model for storing all the requested Tags from the user
     """
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    name = models.CharField(max_length=100, null=False, blank=False)
+    skill = models.CharField(max_length=100, null=False, blank=False)
     date_of_req = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return self.skill
 
 
 class jobDetails(models.Model):
@@ -25,3 +25,9 @@ class jobDetails(models.Model):
 
     def __str__(self):
          return self.title
+    
+class Personalize(models.Model):
+    user= models.ForeignKey(User, on_delete=models.CASCADE,null=False)
+    skill = models.CharField(max_length=100,default="")
+    def __str__(self):
+        return self.skill

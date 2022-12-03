@@ -7,18 +7,15 @@
           <div class="col-lg-4">
           </div>
           <div class="col-lg-4">
-            <form>
+            <form action="" method="post">{% csrf_token %}
                 <div class="mb-3">
-                  <label for="exampleInputJob" class="form-label">Job Intrest</label>
-                  <input type="text" class="form-control" id="exampleInputJob" aria-describedby="jobHelp" placeholder="Job title">
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputcompany" class="form-label">Company</label>
-                  <input type="text" class="form-control" id="exampleInputcompany" placeholder="company name">
+                  <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="mb-3">
                     <label for="exampleDataList" class="form-label">Skills</label>
-                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="enter keywords">
+                    <input class="form-control" list="datalistOptions" name="skill" id="exampleDataList" placeholder="enter keywords">
                         <datalist id="datalistOptions">
                             <option value="Django">
                             <option value="Flask">

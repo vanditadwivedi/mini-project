@@ -1,0 +1,29 @@
+{% extends 'webscrap/basic.html' %}
+{%  block title  %} this is request_tag page  {%  endblock %}
+{% block body %}
+<!-----------------------------------------------------form--------------------------------------------------->
+<div class="container">
+    <div class="row my-5">
+      <div class="col-lg-4">
+      </div>
+      <div class="col-lg-4">
+        <form action="" method="post">{% csrf_token %}
+            <div class="mb-3">
+                <label for="exampleDataList" class="form-label">Skills</label>
+                <input class="form-control" name="skill" list="datalistOptions" id="exampleDataList" placeholder="enter keywords">
+                    <datalist id="datalistOptions">
+                        <option value="Django">
+                        <option value="Flask">
+                        <option value="Python">
+                        <option value="JavaScript">
+                        <option value="Tkinter">
+                    </datalist>
+              </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+          </form>
+      </div>
+      <div class="col-lg-4">
+      </div>
+    </div>
+  </div>
+{%  endblock %}
