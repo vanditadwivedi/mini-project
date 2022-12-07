@@ -2,13 +2,13 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Personalize,Tags,jobDetails
 from django.contrib import messages
-from django.contrib.auth import authenticate
 
 
 # Create your views here.
 
 def index(request):
-    return render(request,'webscrap/main.html')
+    alljobs=jobDetails.objects.all()
+    return render(request,'webscrap/main.html',{'alljobs':alljobs})
 def about(request):
     return render(request,'webscrap/about.html')
 def personalize(request):

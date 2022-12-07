@@ -5,53 +5,21 @@
 <!---------------------------------------Card---------------------------------->
 <div class="container">
   <div class="row gy-3 my-5">
+    {% for item in alljobs%}
     <div class="col-sm-6 col-md-4 col-lg-3">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Company Name</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Job Post </h6>
+          <h5 class="card-title">{{item.company_name }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{item.title }}</h6>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="card-link">Apply link</a>
+          <a href="{{item.link}}" class="card-link">{{item.link|slice:"0:30"}}</a>
         </div>
       </div>
     </div>
-<!----------------------------------Card2------------------------------------->
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Company Name</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Job Post </h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="card-link">Apply link</a>
-        </div>
-      </div>
-    </div>
-  <!-------------------------------------------card 3------------------------>
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Company Name</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Job Post </h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="card-link">Apply link</a>
-        </div>
-      </div>
-    </div>
-  <!---------------------------------------------card 4----------------------->
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Company Name</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Job Post </h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="card-link">Apply link</a>
-        </div>
-      </div>
-    </div>
-    
-  </div>
-</div>
-
-
+    {% if forloop.counter|divisibleby:4%}
+    </div><div class="row gy-3 my-5">
+      {%endif%}
+      {%endfor%}
+      </div></div>
 
 {%  endblock %}
